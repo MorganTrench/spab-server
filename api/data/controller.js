@@ -1,17 +1,22 @@
 const db = require('../../models');
 
 exports.getData = (req, res) => {
-  res.send('data controller success');
+  db.Sample.findAll({
+    order: [['timestamp', 'DESC']],
+    attributes: {
+      exclude: ['id', 'createdAt', 'updatedAt']
+    }
+  }).then(
+    samples => res.status(200).json(samples),
+    err => res.status(400).send(err)
+  );
 };
 
 exports.receiveData = (req, res) => {
-  db.Sample.create({
-    sourceId: 'SPAB',
-    timestamp: Date.now(),
-    latitude: (Math.random() - 0.5) * 100,
-    longitude: (Math.random() - 0.5) * 100,
-    temperature: (Math.random() - 0.5) * 15 + 25
-  }).then(
+  const sample = Object.assign(Object.assign({}, req.body), {
+    timestamp: Date.now()
+  });
+  db.Sample.create(sample).then(
     () => {
       res.send('success');
     },
