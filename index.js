@@ -11,13 +11,7 @@ const app = express();
 const port = 3000;
 
 // Setup api endpoing, parse body of incoming requests into Javascript objects
-app.use(
-  '/api',
-  bodyParser.json(),
-  bodyParser.urlencoded(),
-  upload.none(),
-  require('./api')
-);
+app.use('/api', bodyParser.json(), bodyParser.urlencoded(), require('./api'));
 
 // Setup serving of static assets, disable for now
 //app.use(express.static('public'))

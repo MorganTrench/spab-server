@@ -26,3 +26,19 @@ exports.receiveData = (req, res) => {
     }
   );
 };
+
+// setInterval(() => {
+//   const thing = {
+//     sourceId: 'SPAB',
+//     timestamp: '2019-02-28T15:17:07.989Z',
+//     latitude: (Math.random() - 0.5) * 10,
+//     longitude: (Math.random() - 0.5) * 10,
+//     temperature: (Math.random() - 0.5) * 10 + 20
+//   };
+//   db.Sample.create(thing).then(
+//     () => {},
+//     err => {
+//       console.log(err);
+//     }
+//   );
+// });
