@@ -3,5 +3,6 @@ const router = express.Router();
 const controller = require('./controller');
 
 router.post('/', controller.recievePhoto);
+router.get('/', controller.listPhotos);
 
 module.exports = router;

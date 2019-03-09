@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       timestamp: DataTypes.DATE,
       latitude: DataTypes.FLOAT,
       longitude: DataTypes.FLOAT,
-      fileId: DataTypes.STRING
+      filename: DataTypes.STRING
     },
     {}
   );
