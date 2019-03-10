@@ -2,3 +2,4 @@ node_modules
 .vscode
 
 static/photos
+static/frontend
