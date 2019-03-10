@@ -14,6 +14,6 @@ router.use(['/journey', '/plan', '/sensor', '/status'], (req, res) => {
   res.sendFile(frontendDirectoryPath + '/index.html');
 });
 // Serve al frontend files
-router.use('/', express.static(frontendDirectoryPath, options));
+router.use('/', express.static(frontendDirectoryPath));
 
 module.exports = { photoDirectoryPath, router };

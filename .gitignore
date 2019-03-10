@@ -1,5 +1,6 @@
 node_modules
 .vscode
 
+.sqlite3
 static/photos
 static/frontend
