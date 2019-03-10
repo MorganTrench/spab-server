@@ -4,11 +4,13 @@ const router = express.Router();
 
 /* Setup file system */
 // Photos
-const photoDirectoryPath = path.join(__dirname, 'photos');
+const photoDirectoryPath =
+  process.env.PHOTO_DIRECTORY || path.join(__dirname, 'photos');
 router.use('/photos', express.static(photoDirectoryPath));
 
 // Frontend
-const frontendDirectoryPath = path.join(__dirname, 'frontend');
+const frontendDirectoryPath =
+  process.env.FRONTEND_DIRECTORY || path.join(__dirname, 'frontend');
 // Have app routes redirected to index.html so that internal routes work
 router.use(['/journey', '/plan', '/sensor', '/status'], (req, res) => {
   res.sendFile(frontendDirectoryPath + '/index.html');
