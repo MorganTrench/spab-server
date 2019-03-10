@@ -15,8 +15,6 @@ const db = require('./models'); // initialise the database
 const app = express();
 const port = process.env.PORT || 3000;
 
-console.log(process.env.FRONTEND_DIRECTORY);
-
 // Setup api endpoing, parse body of incoming requests into Javascript objects
 app.use('/api', bodyParser.json(), bodyParser.urlencoded(), api);
 // Serve 'static' files
