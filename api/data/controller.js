@@ -15,7 +15,7 @@ exports.getData = (req, res) => {
 };
 
 exports.receiveData = (req, res) => {
-  console('hit');
+  console.log('hit');
   console.log(JSON.stringify(req.body));
   const sample = Object.assign(Object.assign({}, req.body), {
     timestamp: Date.now()
